@@ -27,14 +27,6 @@ module.exports = function() {
         aluno.nota1 = +aluno.nota1.replace(" ponto ", ".");
         aluno.nota2 = +aluno.nota2.replace(" ponto ", ".");
 
-        if (aluno.nota1 > 10) {
-            aluno.nota1 = 10;
-        }
-
-        if (aluno.nota2 > 10) {
-            aluno.nota2 = 10;
-        }
-
         aluno.media = parseFloat((aluno.nota1 + aluno.nota2) / 2).toFixed(2);
 
         var con = mysql.createConnection(configuracoesBanco);
