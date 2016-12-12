@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE vxml PUBLIC "-//BeVocal Inc//VoiceXML 2.0//EN" "http://cafe.bevocal.com/libraries/dtd/vxml2-0-bevocal.dtd">
+<vxml version="2.0" xmlns="http://www.w3.org/2001/vxml" xml:lang="pt-BR">
+
+    <form>
+        <field name="nome">
+            <prompt>Informe o nome do aluno que deseja consultar</prompt>
+            <grammar>[ willian luiza beto carol ]</grammar>
+        </field>
+
+        <filled>
+            <submit method="post" namelist="nome" next="http://104.236.56.111:3000/alunos/consulta" />
+        </filled>
+
+    </form>
+
+    <nomatch>
+        Nao foi possivel entender!
+        <reprompt/>
+    </nomatch>
+
+</vxml>

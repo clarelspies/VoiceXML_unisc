@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE vxml PUBLIC "-//BeVocal Inc//VoiceXML 2.0//EN" "http://cafe.bevocal.com/libraries/dtd/vxml2-0-bevocal.dtd">
+<vxml version="2.0" xmlns="http://www.w3.org/2001/vxml" xml:lang="pt-BR">
+
+    <form id="principal">
+
+        <field name="opcao">
+            <prompt>
+                Informe se deseja consultar ou cadastrar.
+            </prompt>
+
+            <grammar>
+                [cadastrar consultar]
+            </grammar>
+
+            <filled>
+                <if cond="opcao == 'cadastrar'">
+                    <goto next="http://104.236.56.111:3000/alunos/cadastrar" />
+                </if>
+
+                <if cond="opcao == 'consultar'">
+                    <goto next="http://104.236.56.111:3000/alunos/consultar" />
+                </if>
+
+            </filled>
+        </field>
+
+    </form>
+
+    <nomatch>
+        Nao foi possivel entender!
+        <reprompt/>
+    </nomatch>
+
+</vxml>
